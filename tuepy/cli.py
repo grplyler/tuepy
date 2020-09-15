@@ -30,3 +30,5 @@ def main():
 
     
     # Run Test function: is arg 1 == 'test'
+    elif argv[1] == "test":
+        tm.test()
