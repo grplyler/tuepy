@@ -1,8 +1,7 @@
 
 import csv
 from os import path
-from .format import fr, fl, progress, print_task
-
+from .format import fr, fl, progress, print_task, print_class_header, print_week_header
 
 class TodoManager(object):
 
@@ -111,9 +110,7 @@ class TodoManager(object):
         last_class = ""
 
         # Print Weekly Summary Header
-        print("+-------------------------------------------------------------+")
-        print(f"|                           Week {week}                             ")
-
+        print_week_header(week)
 
         for todo in self._data:
 
@@ -122,16 +119,10 @@ class TodoManager(object):
                 # If we've encountered a new class, print the class header
                 current_class = todo[0]
                 if current_class != last_class:
-                    name = f"[ {todo[0]} ]"
-                    print(f"+----+----------+{fl(name, 45, '-')}")
+                    print_class_header(todo)
                 
                 # Print Task
-                prog = int(todo[3])
-                title = todo[2]
-                ttype = todo[4]
-                
-                index_fmt = f"{fl(str(index),2)}"
-                print(f"|{index_fmt} {progress(prog, fill='█', start='|', end='|')}{fr(title, 34)}")
+                print_task(todo)
 
                 total += 100
                 done += int(todo[3])
