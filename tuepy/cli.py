@@ -1,6 +1,6 @@
 from sys import argv
 from subprocess import Popen
-from .todo import TodoManager, Todo
+from .todo import TodoManager
 
 def main():
 
@@ -42,5 +42,5 @@ def main():
         excel = Popen(tm.data_path, shell=True)
     
     # Run Test function: is arg 1 == 'test'
-    elif argv[1] == "test"
+    elif argv[1] == "test":
         tm.test()
