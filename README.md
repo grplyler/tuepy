@@ -3,7 +3,7 @@
   Tuesday
 </h1>
 
-<h3 align="center">A command-line task manager and course workload manager inspired by student woes, insufficient funds, only 24-hour days, and monday.com</h3>
+<h3 align="center">A command-line task manager and course workload manager inspired by student woes, insufficient funds, hard limits on only 24 hour days, and monday.com</h3>
 
 ![](carbon.png)
 
