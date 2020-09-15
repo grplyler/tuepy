@@ -93,7 +93,6 @@ class TodoManager(object):
         for todo in self._data:
 
             # If the todo belongs to the week we want
-            if todo[1] == week:
                 
                 # If we've encountered a new class, print the class header
                 
@@ -103,6 +102,7 @@ class TodoManager(object):
 
             # Update index
             index += 1
+
 
         
         # Display % done

@@ -1,6 +1,6 @@
 from sys import argv
 from subprocess import Popen
-from .todo import TodoManager, Todo
+from .todo import TodoManager
 
 def main():
 
