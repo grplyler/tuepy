@@ -30,5 +30,3 @@ def main():
 
     
     # Run Test function: is arg 1 == 'test'
-
-    pass

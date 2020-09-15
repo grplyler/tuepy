@@ -1,8 +1,7 @@
 
 import csv
 from os import path
-from .format import fr, fl, progress, print_task
-
+from .format import fr, fl, progress, print_task, print_class_header, print_week_header
 
 class TodoManager(object):
 

@@ -1,4 +1,3 @@
-
 # Generate a Progress Bar
 def progress(percent, width=10, start='[', end=']', fill='*'):
     filled = round((int(percent) / 100) * width)
