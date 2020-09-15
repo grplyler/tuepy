@@ -1,12 +1,19 @@
+
+# Generate a Progress Bar
 def progress(percent, width=10, start='[', end=']', fill='*'):
     filled = round((int(percent) / 100) * width)
     empty = width - filled
     return f"{start}{fill * filled}{' ' * empty}{end}"
 
+# Fill Right
 def fr(data, width, fill=' ', first='', last=''):
+    
+    # Calculate how many padding characters we need on the right
     padding = width - len(data)
+
     return f"{first}{data}{fill * padding}{last}"
 
+# Fill Left
 def fl(data, width, fill=' ', first='', last=''):
     padding = width - len(data)
     return f"{first}{fill * padding} {data}{last}"

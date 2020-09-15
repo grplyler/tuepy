@@ -14,45 +14,62 @@ class TodoManager(object):
         
     # ensure ~/.tue.csv exists, create if not
     def _boot(self):
+
+        # Get tue.csv file in users home dir
         datafile = path.expanduser("~/tue.csv")
+
+        # Check it data file exists, create if not
         if not path.exists(datafile):
             print("Intializing datafile:", datafile)
             with open(datafile, "w") as output:
                 output.write("class,week,title,progress,type\n")
 
+        # Return path to data file
         return datafile
+
+    def test(self):
+        # Test function for doing testy stuff
+        pass
             
-    # Add a Todo
     def add(self, todo):
+
+        # Add Todo to data
         self._data.append([
-            todo.cls,
-            todo.week,
-            todo.title,
-            todo.progress,
-            todo.type
+            todo[0],
+            todo[1],
+            todo[2],
+            todo[3],
+            todo[4],
         ])
 
+        # Save Data
         self.save()
 
     def set_progress(self, id, progress):
+        # Set the progress for a given task id
+        # (todo[3] == progress)
+
         index = 0
         for row in self._data:
             if index == int(id):
                 self._data[index][3] = progress
             index += 1
 
+        # Save
         self.save()
         print(f"Progress on task {id} set to {progress}%.")
 
 
     def load(self):
 
+        # Load CSV data to self._data
         with open(self.data_path) as datafile:
             csvreader = csv.reader(datafile)
 
             # Skip Headers
             next(csvreader)
             
+            # Read Rows
             for row in csvreader:
                 if len(row) > 0:
                     self._data.append(row)
@@ -102,9 +119,9 @@ class TodoManager(object):
 
             if todo[1] == week:
                 
+                # If we've encountered a new class, print the class header
                 current_class = todo[0]
                 if current_class != last_class:
-                    # Print Class Header if Changed
                     name = f"[ {todo[0]} ]"
                     print(f"+----+----------+{fl(name, 45, '-')}")
                 
@@ -125,10 +142,12 @@ class TodoManager(object):
         
         # Display % done
         if total != 0:
+
+            # Calculation Total Percentage Done
             percent = (done / total) * 100
             complete = f"[ {percent:.2f}% done ]"
-            # print(fl(complete, width=62, fill='='))
 
+            # Print Total Progress Footer
             print("+==============================================================")
             print(f"{progress(percent, fill='█', start='|', end='', width=48)}{complete}")
             print("+==============================================================")
@@ -139,21 +158,8 @@ class TodoManager(object):
         # Sort Data by week then class
         self._data = sorted(self._data, key=lambda element: (element[1], element[0]))
 
+        # Write Data lines to CSV files
         with open(self.data_path, 'w', newline='') as datafile:
             csvwriter = csv.writer(datafile)
             csvwriter.writerow(['class', 'week', 'title', 'progress', 'type'])
             csvwriter.writerows(self._data)
-
-
-class Todo(object):
-    
-    def __init__(self, cls="", week=3, title="", progress=0, type="study"):
-        self.cls = cls #class
-        self.week = week
-        self.title = title
-        self.progress = progress
-        self.type = type
-
-    def print(self):
-        print(f"{self.cls} {self.week} {self.title} {self.progress} {self.type}")
-   
