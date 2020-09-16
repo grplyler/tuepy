@@ -35,10 +35,12 @@
 
 ## Install
 
+*Install from source*
+
 ```
 git clone https://github.com/grplyler/tuepy.git
 cd tuepy
-python3 setup.py install
+python setup.py install
 ```
 
 ## Develop
@@ -46,7 +48,7 @@ python3 setup.py install
 ```
 git clone https://github.com/grplyler/tuepy.git
 cd tuepy
-python3 setup.py develop
+python setup.py develop
 ```
 
 ## Examples
