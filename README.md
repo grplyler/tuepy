@@ -13,14 +13,13 @@
   <a href="#develop">Develop</a> •
   <a href="#examples">Examples</a> •
   <a href="#contributing">Contributing</a> •
-  <a href="#Todo">Todo</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
 </p>
 
 
 ## Key Features
-* **Manage grouped tasks in your work week**
+* **Manage grouped tasks in your work week
 
 * **Get Task and Week-Level Progress Indicators**
     * Way more realistic and and fun than just checking a box
@@ -83,33 +82,12 @@ Added ['CSIS 310', '4', 'Develop Portfolio Site', '0', 'assignment']
 t 21 50
 ```
 
-## Data Storage
-
-Data is stored in CSV format in a file located at `~/tue.csv`
-
-```
-class,week,title,progress,type
-BUSI 240,3,Reply 1,100,assign
-BUSI 240,3,Reply 2,100,assign
-BUSI 240,3,Chapter 5,100,study
-BUSI 240,3,Chapter 5 HW,100,study
-BUSI 240,3,Chapter 6,100,study
-BUSI 240,3,Chapter 6 HW,100,study
-BUSI 240,3,"Quiz 3 Chs. 5,6",100,assign
-CSIS 310,3,Project 01,100,assign
-CSIS 340,3,Read NIST Document,100,study
-CSIS 340,3,Flipped Classroom Activities,100,assign
-CSIS 352,3,Eckert Ch. 3,100,study
-CSIS 352,3,Tomsho Ch. 2,100,study
-CSIS 352,3,In-class Activity 1,100,study
-CSIS 352,3,In-class Activity 2,100,study
-```
-
 ## Rationale
 
-I created this project for the following reasons:
-* To manage my own coursework
-* To teach Python and CSV reading and writing for the Liberty University Technology & Engineering Club
+I wrote this little tool to accomplish the following goals
+* Learn Rust
+* Have very simple recon intrusion detection without having to install something heavier like `snort` or the like.
+* Explore Packets at the Layer 2 Level (For my Major in Networking & Security)
 
 ## Disclaimer
 
@@ -121,15 +99,8 @@ The code and executables in this project are a **work in progress**. While they 
 If you like this project, here are some ways you can contribute!
 
 * Feature Requests
-* Bug Reports
+* Bug Reports (Although writing in Rust means significantly less bugs)
 * Platform Testing
-
-## Todo
-
-* [] Use human readable data format
-* [] Support multiple data files
-* [] Write a network server for remote access and teams
-* [] Implement golang version for higher performance and easy distribution
 
 
 ## Credits
