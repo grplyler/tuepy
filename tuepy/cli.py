@@ -17,7 +17,6 @@ def main():
     elif argv[1] == 'a':
         todo = " ".join(argv[2:]).split(':')
         tm.add(todo)
-        print("Added", split)
 
     # Show Weekly Summary: is arg 1 == 'w'
     elif argv[1] == 'w':
