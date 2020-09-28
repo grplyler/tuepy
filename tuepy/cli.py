@@ -26,14 +26,18 @@ def main():
     # Update Task Progress: if arg 1 is digit AND arg 2 is digit
     elif argv[1].isdigit() and argv[2].isdigit():
         tm.set_progress(argv[1], argv[2])
-
-    # Remove task by id: if arg 1 is digit AND arg 2 is 'rm'
-    elif argv[1].isdigit() and argv[2] == 'rm':
-        tm.remove_by_id(argv[1])
+        tm.weekly_summary(str(tm.latest_week()))
+        print(f"Progress on task {argv[1]} set to {argv[2]}%.")
 
     # Mark task as done: if arg 1 is digit and arg 2 == 'done'
     elif argv[1].isdigit() and argv[2] == 'done':
         tm.set_progress(argv[1], 100)
+        tm.weekly_summary(str(tm.latest_week()))
+        print(f"Progress on task {argv[1]} set to {argv[2]}%.")
+
+    # Remove task by id: if arg 1 is digit AND arg 2 is 'rm'
+    elif argv[1].isdigit() and argv[2] == 'rm':
+        tm.remove_by_id(argv[1])
 
     # Open csv datafile with default system application (Excel)
     elif argv[1] == "edit":

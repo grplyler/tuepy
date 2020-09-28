@@ -57,7 +57,6 @@ class TodoManager(object):
 
         # Save
         self.save()
-        print(f"Progress on task {id} set to {progress}%.")
 
 
     def load(self):
