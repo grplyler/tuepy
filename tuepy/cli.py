@@ -28,6 +28,11 @@ def main():
         # allow 100 as max
         if int(argv[2]) > 100:
             argv[2] = 100
+
+        # allow 0 as min
+        if int(argv[2]) < 0:
+            argv[2] = 0
+            
         tm.set_progress(argv[1], argv[2])
         tm.weekly_summary(str(tm.latest_week()))
         print(f"Progress on task {argv[1]} set to {argv[2]}%.")
