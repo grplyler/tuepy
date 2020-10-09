@@ -25,6 +25,9 @@ def main():
 
     # Update Task Progress: if arg 1 is digit AND arg 2 is digit
     elif argv[1].isdigit() and argv[2].isdigit():
+        # allow 100 as max
+        if int(argv[2]) > 100:
+            argv[2] = 100
         tm.set_progress(argv[1], argv[2])
         tm.weekly_summary(str(tm.latest_week()))
         print(f"Progress on task {argv[1]} set to {argv[2]}%.")
